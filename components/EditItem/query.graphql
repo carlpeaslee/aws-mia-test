@@ -1,0 +1,64 @@
+query editItemQuery (
+  $itemId: ID!
+  $userId: ID
+  $orgSub: String
+) {
+  item (id: $itemId) {
+    id
+    title
+    attribution
+    culture
+    dimensions
+    medium
+    date
+    accessionNumber
+    currentLocation
+    creditLine
+    text
+    localId
+    pullFromCustomApi
+    mainImage {
+      id
+    }
+    details {
+      id
+      index
+      title
+      image {
+        id
+        organization {
+          id
+        }
+      }
+    }
+    relatedBooks {
+      id
+      title
+    }
+  }
+  user (id: $userId) {
+    id
+    email
+  }
+  organization (
+    subdomain: $orgSub
+  ) {
+    id
+    images {
+      id
+    }
+    subdomain
+    customItemApiEnabled
+    customItemApiEndpoint
+  }
+  books (
+    orgSub: $orgSub
+  ) {
+    id
+    title
+    previewImage {
+      id
+    }
+  }
+
+}

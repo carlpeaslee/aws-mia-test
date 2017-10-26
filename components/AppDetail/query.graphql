@@ -1,0 +1,18 @@
+query DetailQuery (
+  $detailId: ID!
+) {
+  detail (
+    id: $detailId
+  ) {
+    id
+    title
+    image {
+      id
+    }
+    index
+    description
+    additionalImages {
+      id
+    }
+  }
+}

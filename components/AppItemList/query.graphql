@@ -1,0 +1,17 @@
+query itemListData (
+  $search: String
+) {
+
+  items (
+    search: $search
+  ) {
+    id
+    title
+    mainImage {
+      id
+    }
+    organizations {
+      id
+    }
+  }
+}

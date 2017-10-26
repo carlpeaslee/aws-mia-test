@@ -1,0 +1,42 @@
+mutation editOrCreateDetail (
+  $detailId: ID
+  $itemId: ID
+  $title: String
+  $imageId: ID
+  $index: Int
+  $newAdditionalImageIds: [ID]
+  $geometry: GeometryInput
+  $description: String
+  $removeAdditionalImageIds: [ID]
+
+) {
+  editOrCreateDetail (
+    id: $detailId
+    itemId: $itemId
+    title: $title
+    imageId: $imageId
+    index: $index
+    newAdditionalImageIds: $newAdditionalImageIds
+    removeAdditionalImageIds: $removeAdditionalImageIds
+    geometry: $geometry
+    description: $description
+  ) {
+    id
+    title
+    index
+    description
+    image {
+      id
+      organization {
+        id
+      }
+    }
+    additionalImages {
+      id
+    }
+    geometry {
+      type
+      coordinates
+    }
+  }
+}

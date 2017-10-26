@@ -1,0 +1,17 @@
+query ImageQuery (
+  $imageId: ID!
+) {
+  image (
+    id: $imageId
+  ) {
+    id
+    organization {
+      id
+    }
+    host
+    gdriveId
+    s3Bucket
+    title
+    alt
+  }
+}

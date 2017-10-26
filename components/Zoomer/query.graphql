@@ -1,0 +1,34 @@
+query ZoomerQuery (
+  $imageId: ID!
+  $detailId: ID!
+) {
+  image (
+    id: $imageId
+  ) {
+    id
+    organization {
+      id
+    }
+    localId
+    host
+    gdriveId
+  }
+  detail (
+    id: $detailId
+  ) {
+    id
+    image {
+      id
+      organization {
+        id
+      }
+      host
+      gdriveId
+    }
+    geometry {
+      type
+      coordinates
+    }
+  }
+
+}

@@ -1,0 +1,35 @@
+mutation editOrCreatePage (
+  $pageId: ID
+  $title: String
+  $text: String
+  $comparisonImages: [ComparisonImageInput]
+  $mainImageId: ID
+  $type: String
+  $video: String
+  $index: Int
+) {
+  editOrCreatePage (
+    id: $pageId
+    title: $title
+    text: $text
+    comparisonImages: $comparisonImages
+    mainImageId: $mainImageId
+    type: $type
+    video: $video
+    index: $index
+  ) {
+    id
+    title
+    text
+    type
+    index
+    mainImage {
+      id
+    }
+    comparisonImages {
+      id
+      index
+    }
+    video
+  }
+}

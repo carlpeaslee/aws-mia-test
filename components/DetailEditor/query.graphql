@@ -1,0 +1,22 @@
+query DetailQuery (
+  $detailId: ID!
+) {
+  detail (
+    id: $detailId
+  ) {
+    id
+    title
+    description
+    geometry {
+      type
+      coordinates
+    }
+    index
+    image {
+      id
+    }
+    additionalImages {
+      id
+    }
+  }
+}
